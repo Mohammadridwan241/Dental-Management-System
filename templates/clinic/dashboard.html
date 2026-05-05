@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | {{ site_name }}{% endblock %}
+{% block content %}
+<section class="py-5 dashboard-shell">
+    <div class="container">
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
+            <div>
+                <h1 class="fw-bold mb-1">Doctor Dashboard</h1>
+                <p class="text-muted mb-0">Welcome back, Dr. {{ doctor.user.get_full_name|default:doctor.user.username }}.</p>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+                <a href="{% url 'prescription_create' %}" class="btn btn-clinic">Create Prescription</a>
+                <a href="{% url 'appointment_list' %}" class="btn btn-outline-dark">Manage Appointments</a>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-6 col-xl-3"><div class="metric-card"><span>Medicines</span><h2>{{ medicine_count }}</h2></div></div>
+            <div class="col-md-6 col-xl-3"><div class="metric-card"><span>Specialists</span><h2>{{ specialist_count }}</h2></div></div>
+            <div class="col-md-6 col-xl-3"><div class="metric-card"><span>Appointments</span><h2>{{ appointment_count }}</h2></div></div>
+            <div class="col-md-6 col-xl-3"><div class="metric-card"><span>Prescriptions</span><h2>{{ prescription_count }}</h2></div></div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="fw-bold">Quick Actions</h5>
+                        <div class="d-grid gap-2 mt-3">
+                            <a class="btn btn-outline-dark" href="{% url 'medicine_list' %}">Manage Medicines</a>
+                            <a class="btn btn-outline-dark" href="{% url 'specialist_list' %}">Manage Specialists</a>
+                            <a class="btn btn-outline-dark" href="{% url 'prescription_list' %}">Prescription History</a>
+                        </div>
+                        <hr>
+                        <h6 class="fw-bold">Appointment Status</h6>
+                        {% for item in appointment_breakdown %}
+                            <div class="d-flex justify-content-between small mb-2">
+                                <span>{{ item.status }}</span>
+                                <strong>{{ item.total }}</strong>
+                            </div>
+                        {% empty %}
+                            <p class="text-muted small mb-0">No appointment data yet.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3">Recent Prescriptions</h5>
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead><tr><th>ID</th><th>Patient</th><th>Date</th><th></th></tr></thead>
+                                <tbody>
+                                    {% for prescription in recent_prescriptions %}
+                                        <tr>
+                                            <td>#{{ prescription.id }}</td>
+                                            <td>{{ prescription.patient.name }}</td>
+                                            <td>{{ prescription.created_at|date:"d M Y" }}</td>
+                                            <td><a href="{% url 'prescription_detail' prescription.pk %}" class="btn btn-sm btn-outline-dark">View</a></td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr><td colspan="4" class="text-muted">No prescriptions created yet.</td></tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3">Recent Appointments</h5>
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead><tr><th>Patient</th><th>Doctor</th><th>Schedule</th><th>Status</th></tr></thead>
+                                <tbody>
+                                    {% for appointment in recent_appointments %}
+                                        <tr>
+                                            <td>{{ appointment.patient_name }}</td>
+                                            <td>{{ appointment.specialist|default:"Not assigned" }}</td>
+                                            <td>{{ appointment.preferred_date }} {{ appointment.preferred_time|time:"H:i" }}</td>
+                                            <td><span class="badge text-bg-light">{{ appointment.status }}</span></td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr><td colspan="4" class="text-muted">No appointments yet.</td></tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

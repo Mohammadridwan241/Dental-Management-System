@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Specialists | {{ site_name }}{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="fw-bold mb-0">Specialist Doctors</h1>
+            <a href="{% url 'specialist_create' %}" class="btn btn-clinic">Add Specialist</a>
+        </div>
+        <div class="row g-4">
+            {% for specialist in specialists %}
+                <div class="col-md-6 col-xl-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        {% if specialist.profile_image %}
+                            <img src="{{ specialist.profile_image.url }}" class="card-img-top specialist-image" alt="{{ specialist.name }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="fw-bold">{{ specialist.name }}</h5>
+                            <p class="text-clinic mb-1">{{ specialist.specialization }}</p>
+                            <p class="small text-muted mb-1">{{ specialist.experience }} years experience</p>
+                            <p class="small mb-1">{{ specialist.phone_number }}</p>
+                            <p class="small mb-2">{{ specialist.email }}</p>
+                            <p class="small text-muted">{{ specialist.address }}</p>
+                            <div class="d-flex gap-2">
+                                <a href="{% url 'specialist_update' specialist.pk %}" class="btn btn-sm btn-outline-dark">Edit</a>
+                                <a href="{% url 'specialist_delete' specialist.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12"><div class="alert alert-info">No specialists added yet.</div></div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

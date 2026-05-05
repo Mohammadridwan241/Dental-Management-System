@@ -1,0 +1,130 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 05, 2026 - 23:07:32
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 05, 2026 - 23:28:35
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Performing system checks...
+
+Performing system checks...
+
+Performing system checks...
+
+Performing system checks...
+
+Performing system checks...
+
+Performing system checks...
+
+Performing system checks...
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 06, 2026 - 00:28:56
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 1 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): clinic.
+Run 'python manage.py migrate' to apply them.
+May 06, 2026 - 00:29:13
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 2 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): clinic.
+Run 'python manage.py migrate' to apply them.
+May 06, 2026 - 00:29:39
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 06, 2026 - 01:03:42
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 06, 2026 - 01:06:54
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 06, 2026 - 01:07:06
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 06, 2026 - 01:07:42
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 06, 2026 - 01:07:50
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 06, 2026 - 01:07:59
+Django version 6.0.5, using settings 'dental_management_system.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/

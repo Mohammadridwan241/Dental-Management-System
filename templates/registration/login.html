@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Login | {{ site_name }}{% endblock %}
+{% block content %}
+<section class="auth-section">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card border-0 shadow-lg rounded-4">
+                    <div class="card-body p-4 p-lg-5">
+                        <h2 class="fw-bold mb-2">Doctor Login</h2>
+                        <p class="text-muted mb-4">Access appointments, medicines, specialists, and prescriptions.</p>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-clinic w-100">Login</button>
+                        </form>
+                        <p class="mt-4 mb-0 text-center">New here? <a href="{% url 'register' %}">Register as doctor/admin</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

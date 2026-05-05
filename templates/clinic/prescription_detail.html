@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}Prescription {{ prescription.patient_code }} | {{ site_name }}{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2 screen-only">
+            <div>
+                <h1 class="fw-bold mb-1">Prescription</h1>
+                <p class="text-muted mb-0">Patient ID: {{ prescription.patient_code }}</p>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+                <a href="{% url 'prescription_pdf' prescription.pk %}" class="btn btn-clinic">Download PDF</a>
+                <button onclick="window.print()" class="btn btn-outline-dark">Print</button>
+                <a href="{% url 'prescription_list' %}" class="btn btn-outline-secondary">Back</a>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm printable-prescription prescription-sheet">
+            <div class="card-body p-4 p-lg-5">
+                <div class="prescription-clinic-title">
+                    <h2>Dr SHAFIQUE'S DENTAL CARE</h2>
+                </div>
+                <div class="prescription-top">
+                    <div class="doctor-block doctor-block-left">
+                        {% if prescription.doctor.display_name_bn %}<h4>{{ prescription.doctor.display_name_bn }}</h4>{% endif %}
+                        {% if prescription.doctor.display_degrees_bn %}<p>{{ prescription.doctor.display_degrees_bn }}</p>{% endif %}
+                        {% if prescription.doctor.display_specialization_bn %}<p>{{ prescription.doctor.display_specialization_bn }}</p>{% endif %}
+                        {% if prescription.doctor.display_training_bn %}<p>{{ prescription.doctor.display_training_bn|linebreaksbr }}</p>{% endif %}
+                        {% if prescription.doctor.display_designation_bn %}<p>{{ prescription.doctor.display_designation_bn }}</p>{% endif %}
+                        {% if prescription.doctor.display_hospital_bn %}<p>{{ prescription.doctor.display_hospital_bn }}</p>{% endif %}
+                    </div>
+                    <div class="doctor-block doctor-block-right text-md-end">
+                        <h4>{{ prescription.doctor.display_name }}</h4>
+                        {% if prescription.doctor.degrees %}<p>{{ prescription.doctor.degrees }}</p>{% endif %}
+                        {% if prescription.doctor.specialization %}<p class="fw-semibold">{{ prescription.doctor.specialization }}</p>{% endif %}
+                        {% if prescription.doctor.training_details %}<p>{{ prescription.doctor.training_details|linebreaksbr }}</p>{% endif %}
+                        {% if prescription.doctor.designation %}<p>{{ prescription.doctor.designation }}</p>{% endif %}
+                        {% if prescription.doctor.hospital_name %}<p>{{ prescription.doctor.hospital_name }}</p>{% endif %}
+                        {% if prescription.doctor.bmdc_no %}<p>BMDC No: {{ prescription.doctor.bmdc_no }}</p>{% endif %}
+                    </div>
+                </div>
+
+                <div class="prescription-patient-row">
+                    <div><span>Patient Name</span><strong>{{ prescription.patient.name }}</strong></div>
+                    <div><span>Patient ID</span><strong>{{ prescription.patient_code }}</strong></div>
+                    <div><span>Age</span><strong>{{ prescription.patient.age }}</strong></div>
+                    <div><span>Date</span><strong>{{ prescription.date|date:"d/m/Y" }}</strong></div>
+                    <div><span>Phone Number</span><strong>{{ prescription.patient.phone_number }}</strong></div>
+                </div>
+
+                <div class="prescription-body-grid">
+                    <div class="left-notes-panel">
+                        <div class="notes-block">
+                            <h5>Chief Complaint</h5>
+                            <p>{{ prescription.chief_complaint|linebreaksbr|default:"-" }}</p>
+                        </div>
+                        <div class="notes-block mt-4">
+                            <h5>Diagnosis</h5>
+                            <p>{{ prescription.diagnosis|linebreaksbr|default:"-" }}</p>
+                        </div>
+                    </div>
+
+                    <div class="rx-panel">
+                        <h2 class="rx-mark">Rx</h2>
+                        <div class="rx-table">
+                            <div class="rx-table-head">
+                                <span>Medicine</span>
+                                <span>Dose</span>
+                                <span>Duration</span>
+                                <span>Instruction</span>
+                            </div>
+                            {% for item in prescription.prescription_medicines.all %}
+                                <div class="rx-table-row">
+                                    <span>{{ forloop.counter }}. {{ item.medicine }}</span>
+                                    <span>{{ item.display_dose|default:"-" }}</span>
+                                    <span>{{ item.display_duration|default:"-" }}</span>
+                                    <span>{{ item.display_instruction|default:"-" }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="advice-box mt-4">
+                            <h5>Advice</h5>
+                            <p>{{ prescription.advice|linebreaksbr|default:"-" }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prescription-footer-preview">
+                    <div>
+                        {% if prescription.doctor.chamber_info %}<p class="mb-1">{{ prescription.doctor.chamber_info|linebreaksbr }}</p>{% endif %}
+                        <p class="mb-1">{{ prescription.doctor.address }}</p>
+                        <p class="mb-1">Phone: {{ prescription.doctor.phone_number }}</p>
+                        {% if prescription.doctor.visiting_hours %}<p class="mb-0">Visiting Hours: {{ prescription.doctor.visiting_hours }}</p>{% endif %}
+                    </div>
+                    <div class="text-md-end">
+                        {% if prescription.doctor.signature_image %}
+                            <img src="{{ prescription.doctor.signature_image.url }}" alt="Doctor signature" class="signature-preview mb-2">
+                        {% endif %}
+                        <p class="mb-1 fw-semibold">Signature</p>
+                        <p class="mb-1">{{ prescription.doctor.display_name }}</p>
+                        <p class="mb-0">{{ prescription.doctor.hospital_name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

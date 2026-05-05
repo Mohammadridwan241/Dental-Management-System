@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Register | {{ site_name }}{% endblock %}
+{% block content %}
+<section class="auth-section">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <div class="card border-0 shadow-lg rounded-4">
+                    <div class="card-body p-4 p-lg-5">
+                        <h2 class="fw-bold">Doctor/Admin Registration</h2>
+                        <p class="text-muted mb-4">This information is reused automatically in prescriptions and the specialist section.</p>
+                        <form method="post" enctype="multipart/form-data" class="row g-3">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="col-md-6 {% if field.name == 'address' or field.name == 'training_details' or field.name == 'training_details_bn' or field.name == 'chamber_info' %}col-md-12{% endif %}">
+                                    <label class="form-label">{{ field.label }}</label>
+                                    {{ field }}
+                                    {% if field.errors %}<div class="text-danger small">{{ field.errors|join:", " }}</div>{% endif %}
+                                </div>
+                            {% endfor %}
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-clinic">Create Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

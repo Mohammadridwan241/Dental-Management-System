@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% block title %}Create Prescription | {{ site_name }}{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <div>
+                <h1 class="fw-bold mb-1">Create Prescription</h1>
+                <p class="text-muted mb-0">Build a print-ready clinic prescription with dynamic doctor, patient, and medicine data.</p>
+            </div>
+            <a href="{% url 'prescription_list' %}" class="btn btn-outline-dark">Search History</a>
+        </div>
+
+        <form method="post" class="prescription-editor card border-0 shadow-sm">
+            <div class="card-body p-4 p-lg-5">
+                {% csrf_token %}
+
+                <div class="prescription-sheet mb-4">
+                    <div class="prescription-clinic-title">
+                        <h2>Dr SHAFIQUE'S DENTAL CARE</h2>
+                    </div>
+                    <div class="prescription-top">
+                        <div class="doctor-block doctor-block-left">
+                            {% if doctor.display_name_bn %}<h4>{{ doctor.display_name_bn }}</h4>{% endif %}
+                            {% if doctor.display_degrees_bn %}<p>{{ doctor.display_degrees_bn }}</p>{% endif %}
+                            {% if doctor.display_specialization_bn %}<p>{{ doctor.display_specialization_bn }}</p>{% endif %}
+                            {% if doctor.display_training_bn %}<p>{{ doctor.display_training_bn|linebreaksbr }}</p>{% endif %}
+                            {% if doctor.display_designation_bn %}<p>{{ doctor.display_designation_bn }}</p>{% endif %}
+                            {% if doctor.display_hospital_bn %}<p>{{ doctor.display_hospital_bn }}</p>{% endif %}
+                        </div>
+                        <div class="doctor-block doctor-block-right text-md-end">
+                            <h4>{{ doctor.display_name }}</h4>
+                            {% if doctor.degrees %}<p>{{ doctor.degrees }}</p>{% endif %}
+                            {% if doctor.specialization %}<p class="fw-semibold">{{ doctor.specialization }}</p>{% endif %}
+                            {% if doctor.training_details %}<p>{{ doctor.training_details|linebreaksbr }}</p>{% endif %}
+                            {% if doctor.designation %}<p>{{ doctor.designation }}</p>{% endif %}
+                            {% if doctor.hospital_name %}<p>{{ doctor.hospital_name }}</p>{% endif %}
+                            {% if doctor.bmdc_no %}<p>BMDC No: {{ doctor.bmdc_no }}</p>{% endif %}
+                        </div>
+                    </div>
+
+                    <div class="patient-inline-grid">
+                        <div class="field-group field-group-wide">
+                            <label>Patient Name</label>
+                            {{ form.patient_name }}
+                            {% if form.patient_name.errors %}<div class="text-danger small">{{ form.patient_name.errors|join:", " }}</div>{% endif %}
+                        </div>
+                        <div class="field-group">
+                            <label>Age</label>
+                            {{ form.patient_age }}
+                            {% if form.patient_age.errors %}<div class="text-danger small">{{ form.patient_age.errors|join:", " }}</div>{% endif %}
+                        </div>
+                        <div class="field-group">
+                            <label>Date</label>
+                            {{ form.date }}
+                            {% if form.date.errors %}<div class="text-danger small">{{ form.date.errors|join:", " }}</div>{% endif %}
+                        </div>
+                        <div class="field-group field-group-wide">
+                            <label>Phone Number</label>
+                            {{ form.patient_phone_number }}
+                            {% if form.patient_phone_number.errors %}<div class="text-danger small">{{ form.patient_phone_number.errors|join:", " }}</div>{% endif %}
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mt-1 mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label">Gender</label>
+                            {{ form.patient_gender }}
+                            {% if form.patient_gender.errors %}<div class="text-danger small">{{ form.patient_gender.errors|join:", " }}</div>{% endif %}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Weight</label>
+                            {{ form.patient_weight }}
+                            {% if form.patient_weight.errors %}<div class="text-danger small">{{ form.patient_weight.errors|join:", " }}</div>{% endif %}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Email</label>
+                            {{ form.patient_email }}
+                            {% if form.patient_email.errors %}<div class="text-danger small">{{ form.patient_email.errors|join:", " }}</div>{% endif %}
+                        </div>
+                    </div>
+
+                    <div class="prescription-body-grid">
+                        <div class="left-notes-panel">
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Chief Complaint</label>
+                                {{ form.chief_complaint }}
+                                {% if form.chief_complaint.errors %}<div class="text-danger small">{{ form.chief_complaint.errors|join:", " }}</div>{% endif %}
+                            </div>
+                            <div>
+                                <label class="form-label fw-semibold">Diagnosis</label>
+                                {{ form.diagnosis }}
+                                {% if form.diagnosis.errors %}<div class="text-danger small">{{ form.diagnosis.errors|join:", " }}</div>{% endif %}
+                            </div>
+                        </div>
+
+                        <div class="rx-panel">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h3 class="rx-mark mb-0">Rx</h3>
+                                <button type="button" class="btn btn-outline-dark btn-sm screen-only" id="add-form-row">Add Medicine</button>
+                            </div>
+                            {% if formset.non_form_errors %}
+                                <div class="alert alert-danger">{{ formset.non_form_errors }}</div>
+                            {% endif %}
+                            {{ formset.management_form }}
+                            <div id="medicine-formset">
+                                {% for medicine_form in formset %}
+                                    <div class="medicine-form rx-row-card">
+                                        {% for hidden in medicine_form.hidden_fields %}{{ hidden }}{% endfor %}
+                                        <div class="row g-3 align-items-end">
+                                            <div class="col-md-5">
+                                                <label class="form-label">Medicine</label>
+                                                {{ medicine_form.medicine }}
+                                                {% if medicine_form.medicine.errors %}<div class="text-danger small">{{ medicine_form.medicine.errors|join:", " }}</div>{% endif %}
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label class="form-label">Dose</label>
+                                                {{ medicine_form.dose }}
+                                                {% if medicine_form.dose.errors %}<div class="text-danger small">{{ medicine_form.dose.errors|join:", " }}</div>{% endif %}
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label class="form-label">Duration</label>
+                                                {{ medicine_form.duration }}
+                                                {% if medicine_form.duration.errors %}<div class="text-danger small">{{ medicine_form.duration.errors|join:", " }}</div>{% endif %}
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label class="form-label">Instruction</label>
+                                                {{ medicine_form.instruction }}
+                                                {% if medicine_form.instruction.errors %}<div class="text-danger small">{{ medicine_form.instruction.errors|join:", " }}</div>{% endif %}
+                                            </div>
+                                            <div class="col-md-1">
+                                                {% if medicine_form.DELETE %}<div class="form-check">{{ medicine_form.DELETE }} <label class="form-check-label">Remove</label></div>{% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <template id="empty-form-template">
+                                <div class="medicine-form rx-row-card">
+                                    <div class="row g-3 align-items-end">
+                                        {% for hidden in formset.empty_form.hidden_fields %}{{ hidden }}{% endfor %}
+                                        <div class="col-md-5">
+                                            <label class="form-label">Medicine</label>
+                                            {{ formset.empty_form.medicine }}
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label">Dose</label>
+                                            {{ formset.empty_form.dose }}
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label">Duration</label>
+                                            {{ formset.empty_form.duration }}
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label">Instruction</label>
+                                            {{ formset.empty_form.instruction }}
+                                        </div>
+                                        <div class="col-md-1">
+                                            {% if formset.empty_form.DELETE %}<div class="form-check">{{ formset.empty_form.DELETE }} <label class="form-check-label">Remove</label></div>{% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mt-3">
+                        <div class="col-lg-8">
+                            <label class="form-label fw-semibold">Advice</label>
+                            {{ form.advice }}
+                            {% if form.advice.errors %}<div class="text-danger small">{{ form.advice.errors|join:", " }}</div>{% endif %}
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="form-label fw-semibold">Follow Up Date</label>
+                            {{ form.follow_up_date }}
+                            {% if form.follow_up_date.errors %}<div class="text-danger small">{{ form.follow_up_date.errors|join:", " }}</div>{% endif %}
+                        </div>
+                    </div>
+
+                    <div class="prescription-footer-preview mt-4">
+                        <div>
+                            {% if doctor.chamber_info %}<p class="mb-1">{{ doctor.chamber_info|linebreaksbr }}</p>{% endif %}
+                            <p class="mb-1">{{ doctor.address }}</p>
+                            {% if doctor.visiting_hours %}<p class="mb-0">Visiting Hours: {{ doctor.visiting_hours }}</p>{% endif %}
+                        </div>
+                        <div class="text-md-end">
+                            {% if doctor.signature_image %}
+                                <img src="{{ doctor.signature_image.url }}" alt="Doctor signature" class="signature-preview mb-2">
+                            {% endif %}
+                            <p class="mb-1 fw-semibold">{{ doctor.display_name }}</p>
+                            <p class="mb-1">{{ doctor.hospital_name }}</p>
+                            <p class="mb-0">Phone: {{ doctor.phone_number }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2 flex-wrap">
+                    <button type="submit" class="btn btn-clinic">Save Prescription</button>
+                    <a href="{% url 'dashboard' %}" class="btn btn-outline-dark">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block title %}{{ site_name }}{% endblock %}
+{% block content %}
+<section class="hero-section">
+    <div class="container py-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="eyebrow">Healthy smiles begin here</span>
+                <h1 class="display-4 fw-bold mt-3">Shafique's Dental Care</h1>
+                <p class="lead text-muted">Modern dental care with streamlined appointments, specialist support, and prescription-ready workflows for every patient visit.</p>
+                <div class="d-flex gap-3 flex-wrap mt-4">
+                    <a class="btn btn-clinic btn-lg" href="#appointment">Book Appointment</a>
+                    <a class="btn btn-outline-dark btn-lg" href="#services">Explore Services</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-card shadow-lg">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="info-tile">
+                                <h5>Advanced Care</h5>
+                                <p>General, cosmetic, surgical, and child-friendly dental treatment.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="info-tile">
+                                <h5>Trusted Specialists</h5>
+                                <p>Experienced doctors with approachable and patient-first care.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="info-tile">
+                                <h5>Easy Booking</h5>
+                                <p>Fast appointment requests directly from the clinic website.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="info-tile accent">
+                                <h5>Prescription Ready</h5>
+                                <p>Printable and downloadable prescriptions with medicine guidance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-5">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Our Services</span>
+            <h2 class="fw-bold">Dental treatments designed for comfort and confidence</h2>
+        </div>
+        <div class="row g-4 mt-2">
+            {% for service in services %}
+                <div class="col-md-6 col-xl-4">
+                    <div class="card border-0 h-100 shadow-sm service-card">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold">{{ service.title }}</h5>
+                            <p class="text-muted mb-0">{{ service.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="specialists" class="py-5 bg-light">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Specialist</span>
+            <h2 class="fw-bold">Meet our dental professionals</h2>
+        </div>
+        <div class="row g-4 mt-2">
+            {% for specialist in home_specialists %}
+                <div class="col-md-6 col-xl-4">
+                    <div class="card border-0 shadow-sm specialist-card h-100">
+                        {% if specialist.profile_image %}
+                            <img src="{{ specialist.profile_image.url }}" class="card-img-top specialist-image" alt="{{ specialist.name }}">
+                        {% else %}
+                            <div class="specialist-placeholder">{{ specialist.name|slice:":1" }}</div>
+                        {% endif %}
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-1">{{ specialist.name }}</h5>
+                            <p class="text-clinic mb-2">{{ specialist.specialization }}</p>
+                            <p class="small text-muted mb-2">{{ specialist.experience }} years experience</p>
+                            <p class="small mb-1">{{ specialist.phone_number }}</p>
+                            <p class="small mb-1">{{ specialist.email }}</p>
+                            <p class="small text-muted mb-0">{{ specialist.address }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <div class="alert alert-info">Specialist profiles will appear here after they are added from the dashboard.</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="eyebrow">About Us</span>
+                <h2 class="fw-bold mt-2">Thoughtful dental care for every stage of life</h2>
+                <p class="text-muted">Shafique's Dental Care combines clinical quality with a calm patient experience. From checkups to advanced dental procedures, our team focuses on clear communication, careful diagnosis, and treatment plans patients can follow confidently.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-panel shadow-sm">
+                    <div>
+                        <h5 class="fw-bold">Why patients choose us</h5>
+                        <ul class="mb-0 text-muted">
+                            <li>Friendly consultation and practical oral health guidance</li>
+                            <li>Responsive scheduling for urgent and follow-up care</li>
+                            <li>Clear prescriptions and treatment instructions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="appointment" class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <span class="eyebrow">Appointment</span>
+                <h2 class="fw-bold mt-2">Book your visit online</h2>
+                <p class="text-muted">Patients can request appointments without logging in. Choose a specialist, preferred date, and describe the dental issue briefly.</p>
+            </div>
+            <div class="col-lg-7">
+                <div class="card border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4">
+                        <form method="post" action="{% url 'book_appointment' %}" class="row g-3">
+                            {% csrf_token %}
+                            {% for field in appointment_form %}
+                                <div class="col-md-6 {% if field.name == 'problem_description' %}col-md-12{% endif %}">
+                                    <label class="form-label">{{ field.label }}</label>
+                                    {{ field }}
+                                    {% if field.errors %}<div class="text-danger small">{{ field.errors|join:", " }}</div>{% endif %}
+                                </div>
+                            {% endfor %}
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-clinic">Submit Appointment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <span class="eyebrow">Contact Us</span>
+                <h2 class="fw-bold mt-2">Reach the clinic anytime</h2>
+                <div class="contact-box mt-4">
+                    <p><strong>Phone:</strong> {% if primary_doctor %}{{ primary_doctor.phone_number }}{% else %}+880 1XXXXXXXXX{% endif %}</p>
+                    <p><strong>Email:</strong> {% if primary_doctor %}{{ primary_doctor.user.email }}{% else %}contact@shafiquesdentalcare.com{% endif %}</p>
+                    <p><strong>Address:</strong> {% if primary_doctor %}{{ primary_doctor.address }}{% else %}Clinic address will appear here after doctor registration.{% endif %}</p>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="card border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4">
+                        <form method="post" action="{% url 'contact_message_create' %}" class="row g-3">
+                            {% csrf_token %}
+                            {% for field in contact_form %}
+                                <div class="col-md-6 {% if field.name == 'message' or field.name == 'subject' %}col-md-12{% endif %}">
+                                    <label class="form-label">{{ field.label }}</label>
+                                    {{ field }}
+                                    {% if field.errors %}<div class="text-danger small">{{ field.errors|join:", " }}</div>{% endif %}
+                                </div>
+                            {% endfor %}
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-clinic">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

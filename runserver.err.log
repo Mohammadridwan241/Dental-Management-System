@@ -1,0 +1,602 @@
+Watching for file changes with StatReloader
+[05/May/2026 23:12:29] "GET / HTTP/1.1" 200 16636
+[05/May/2026 23:12:29] "GET /static/js/prescription.js HTTP/1.1" 200 695
+[05/May/2026 23:12:29] "GET /static/css/styles.css HTTP/1.1" 200 2574
+Not Found: /favicon.ico
+[05/May/2026 23:12:30] "GET /favicon.ico HTTP/1.1" 404 8166
+[05/May/2026 23:13:54] "POST /appointments/book/ HTTP/1.1" 302 0
+[05/May/2026 23:13:54] "GET / HTTP/1.1" 200 17001
+[05/May/2026 23:13:54] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:13:54] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[05/May/2026 23:14:41] "GET /login/ HTTP/1.1" 200 3716
+[05/May/2026 23:21:55] "GET / HTTP/1.1" 200 16636
+[05/May/2026 23:21:55] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:21:55] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[05/May/2026 23:22:10] "GET /admin/ HTTP/1.1" 302 0
+[05/May/2026 23:22:11] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4084
+[05/May/2026 23:22:11] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538
+[05/May/2026 23:22:11] "GET /static/admin/css/login.css HTTP/1.1" 200 951
+[05/May/2026 23:22:11] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+[05/May/2026 23:22:11] "GET /static/admin/css/base.css HTTP/1.1" 200 23100
+[05/May/2026 23:22:11] "GET /static/admin/css/responsive.css HTTP/1.1" 200 16273
+[05/May/2026 23:22:11] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+[05/May/2026 23:22:11] "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+[05/May/2026 23:22:25] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[05/May/2026 23:22:25] "GET /admin/ HTTP/1.1" 200 10924
+[05/May/2026 23:22:26] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+[05/May/2026 23:22:26] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593
+[05/May/2026 23:22:26] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978
+[05/May/2026 23:22:34] "GET /admin/clinic/appointment/ HTTP/1.1" 200 15914
+[05/May/2026 23:22:34] "GET /static/admin/css/changelists.css HTTP/1.1" 200 7498
+[05/May/2026 23:22:34] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[05/May/2026 23:22:34] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:22:34] "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+[05/May/2026 23:22:34] "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+[05/May/2026 23:22:34] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+[05/May/2026 23:22:34] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[05/May/2026 23:22:34] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+[05/May/2026 23:22:34] "GET /static/admin/img/search.svg HTTP/1.1" 200 607
+[05/May/2026 23:22:35] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+[05/May/2026 23:22:35] "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+[05/May/2026 23:22:35] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+[05/May/2026 23:22:35] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928
+[05/May/2026 23:22:35] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593
+[05/May/2026 23:22:35] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1761
+[05/May/2026 23:22:59] "GET /admin/clinic/contactmessage/ HTTP/1.1" 200 11715
+[05/May/2026 23:22:59] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:23:16] "GET /admin/clinic/patient/ HTTP/1.1" 200 11645
+[05/May/2026 23:23:16] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:23:20] "GET /admin/clinic/doctorprofile/ HTTP/1.1" 200 11706
+[05/May/2026 23:23:20] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:23:24] "GET /admin/clinic/contactmessage/ HTTP/1.1" 200 11715
+[05/May/2026 23:23:24] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:23:26] "GET /admin/clinic/appointment/ HTTP/1.1" 200 15914
+[05/May/2026 23:23:26] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:23:47] "GET /admin/clinic/appointment/?status__exact=Confirmed HTTP/1.1" 200 14100
+[05/May/2026 23:23:47] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:23:49] "GET /admin/clinic/appointment/?status__exact=Pending HTTP/1.1" 200 16534
+[05/May/2026 23:23:49] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:23:53] "GET /admin/clinic/appointment/ HTTP/1.1" 200 15914
+[05/May/2026 23:23:53] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:23:57] "GET /admin/clinic/appointment/add/ HTTP/1.1" 200 18521
+[05/May/2026 23:23:58] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:23:58] "GET /static/admin/css/forms.css HTTP/1.1" 200 8831
+[05/May/2026 23:23:58] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+[05/May/2026 23:23:58] "GET /static/admin/js/calendar.js HTTP/1.1" 200 9159
+[05/May/2026 23:23:58] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19698
+[05/May/2026 23:23:58] "GET /static/admin/css/widgets.css HTTP/1.1" 200 11811
+[05/May/2026 23:23:58] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 689
+[05/May/2026 23:23:58] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[05/May/2026 23:23:58] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 805
+[05/May/2026 23:23:58] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1112
+[05/May/2026 23:24:11] "GET /admin/clinic/appointment/ HTTP/1.1" 200 15914
+[05/May/2026 23:24:11] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:24:13] "GET /admin/clinic/appointment/1/change/ HTTP/1.1" 200 18888
+[05/May/2026 23:24:13] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:24:21] "GET /admin/clinic/contactmessage/ HTTP/1.1" 200 11715
+[05/May/2026 23:24:21] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:24:24] "GET /admin/clinic/contactmessage/add/ HTTP/1.1" 200 14466
+[05/May/2026 23:24:24] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:26:09] "POST /admin/clinic/contactmessage/add/ HTTP/1.1" 302 0
+[05/May/2026 23:26:09] "GET /admin/clinic/contactmessage/ HTTP/1.1" 200 14098
+[05/May/2026 23:26:09] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:26:09] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+[05/May/2026 23:26:09] "GET /static/admin/img/icon-yes-dark.svg HTTP/1.1" 200 558
+[05/May/2026 23:26:13] "GET /admin/clinic/doctorprofile/ HTTP/1.1" 200 11706
+[05/May/2026 23:26:13] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:26:27] "GET /admin/clinic/medicine/ HTTP/1.1" 200 11654
+[05/May/2026 23:26:27] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:26:31] "GET /admin/clinic/medicine/add/ HTTP/1.1" 200 13054
+[05/May/2026 23:26:31] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:26:39] "GET /admin/clinic/specialistdoctor/ HTTP/1.1" 200 11733
+[05/May/2026 23:26:39] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:26:52] "GET /admin/ HTTP/1.1" 200 11336
+[05/May/2026 23:26:52] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[05/May/2026 23:26:52] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[05/May/2026 23:26:52] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[05/May/2026 23:26:52] "GET / HTTP/1.1" 200 16732
+[05/May/2026 23:26:52] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:26:52] "GET /static/js/prescription.js HTTP/1.1" 304 0
+Method Not Allowed (GET): /logout/
+[05/May/2026 23:26:56] "GET /logout/ HTTP/1.1" 405 0
+Method Not Allowed (GET): /logout/
+[05/May/2026 23:27:01] "GET /logout/ HTTP/1.1" 405 0
+Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\Desktop\DMS\clinic\views.py", line 55, in dashboard
+    doctor = request.user.doctor_profile
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\db\models\fields\related_descriptors.py", line 520, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+django.contrib.auth.models.User.doctor_profile.RelatedObjectDoesNotExist: User has no doctor_profile.
+[05/May/2026 23:27:16] "GET /dashboard/ HTTP/1.1" 500 82987
+Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\HP\Desktop\DMS\clinic\views.py", line 55, in dashboard
+    doctor = request.user.doctor_profile
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\db\models\fields\related_descriptors.py", line 520, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+django.contrib.auth.models.User.doctor_profile.RelatedObjectDoesNotExist: User has no doctor_profile.
+[05/May/2026 23:27:26] "GET /dashboard/ HTTP/1.1" 500 82987
+C:\Users\HP\Desktop\DMS\clinic\urls.py changed, reloading.
+Watching for file changes with StatReloader
+[05/May/2026 23:35:56] "GET / HTTP/1.1" 200 17406
+[05/May/2026 23:35:56] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[05/May/2026 23:35:56] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:36:02] "GET /dashboard/ HTTP/1.1" 302 0
+[05/May/2026 23:36:02] "GET /complete-profile/ HTTP/1.1" 200 7008
+Method Not Allowed (GET): /logout/
+[05/May/2026 23:36:15] "GET /logout/ HTTP/1.1" 405 0
+[05/May/2026 23:38:54] "GET / HTTP/1.1" 200 17746
+[05/May/2026 23:39:02] "POST /logout/ HTTP/1.1" 302 0
+[05/May/2026 23:39:02] "GET / HTTP/1.1" 200 17310
+[05/May/2026 23:39:02] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[05/May/2026 23:39:04] "GET /login/ HTTP/1.1" 200 3716
+[05/May/2026 23:39:30] "GET /register/ HTTP/1.1" 200 6860
+[05/May/2026 23:39:30] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:42:27] "POST /register/ HTTP/1.1" 302 0
+[05/May/2026 23:42:28] "GET /dashboard/ HTTP/1.1" 200 7299
+[05/May/2026 23:42:28] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[05/May/2026 23:43:15] "GET /prescriptions/create/ HTTP/1.1" 200 15334
+[05/May/2026 23:43:15] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:45:56] "POST /prescriptions/create/ HTTP/1.1" 200 22817
+[05/May/2026 23:46:26] "POST /prescriptions/create/ HTTP/1.1" 200 22979
+[05/May/2026 23:46:26] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[05/May/2026 23:46:48] "GET /dashboard/ HTTP/1.1" 200 6941
+[05/May/2026 23:46:55] "GET /medicines/ HTTP/1.1" 200 3593
+[05/May/2026 23:46:59] "GET /medicines/add/ HTTP/1.1" 200 5126
+[05/May/2026 23:47:37] "POST /medicines/add/ HTTP/1.1" 302 0
+[05/May/2026 23:47:37] "GET /medicines/ HTTP/1.1" 200 4387
+[05/May/2026 23:47:37] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:47:46] "GET /dashboard/ HTTP/1.1" 200 6941
+[05/May/2026 23:47:51] "GET /prescriptions/create/ HTTP/1.1" 200 15428
+[05/May/2026 23:48:43] "POST /prescriptions/create/ HTTP/1.1" 302 0
+[05/May/2026 23:48:43] "GET /prescriptions/5/ HTTP/1.1" 200 5452
+[05/May/2026 23:49:26] "GET /prescriptions/5/pdf/ HTTP/1.1" 200 2291
+[05/May/2026 23:56:27] "GET / HTTP/1.1" 200 18693
+[05/May/2026 23:56:27] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[05/May/2026 23:56:27] "GET /static/css/styles.css HTTP/1.1" 200 2784
+[05/May/2026 23:56:27] "GET /media/doctor_profiles/IMG_20251014_102515.jpg HTTP/1.1" 200 452975
+[05/May/2026 23:56:43] "POST /logout/ HTTP/1.1" 302 0
+[05/May/2026 23:56:43] "GET / HTTP/1.1" 200 18257
+[05/May/2026 23:56:43] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:56:46] "GET /login/ HTTP/1.1" 200 3716
+[05/May/2026 23:56:51] "POST /login/ HTTP/1.1" 200 3875
+[05/May/2026 23:57:13] "POST /login/ HTTP/1.1" 302 0
+[05/May/2026 23:57:13] "GET /dashboard/ HTTP/1.1" 302 0
+[05/May/2026 23:57:13] "GET /complete-profile/ HTTP/1.1" 200 7348
+[05/May/2026 23:57:13] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:57:28] "GET / HTTP/1.1" 200 18693
+[05/May/2026 23:57:28] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:57:29] "GET /admin/ HTTP/1.1" 200 11336
+[05/May/2026 23:57:29] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[05/May/2026 23:57:29] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[05/May/2026 23:57:29] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[05/May/2026 23:57:29] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[05/May/2026 23:57:29] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[05/May/2026 23:57:29] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[05/May/2026 23:57:29] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[05/May/2026 23:57:29] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[05/May/2026 23:57:29] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /admin/auth/user/ HTTP/1.1" 200 15757
+[05/May/2026 23:57:33] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:57:33] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 645
+[05/May/2026 23:57:33] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558
+[05/May/2026 23:57:33] "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+[05/May/2026 23:57:33] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+[05/May/2026 23:57:51] "GET /admin/auth/user/5/change/ HTTP/1.1" 200 28543
+[05/May/2026 23:57:52] "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[05/May/2026 23:57:52] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+[05/May/2026 23:57:52] "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+[05/May/2026 23:57:52] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[05/May/2026 23:57:52] "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[05/May/2026 23:57:52] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:57:52] "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+[05/May/2026 23:57:52] "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 16428
+[05/May/2026 23:57:52] "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[05/May/2026 23:57:52] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+[05/May/2026 23:57:52] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+[05/May/2026 23:57:52] "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 2387
+[05/May/2026 23:58:38] "POST /admin/auth/user/5/change/ HTTP/1.1" 302 0
+[05/May/2026 23:58:38] "GET /admin/auth/user/ HTTP/1.1" 200 15964
+[05/May/2026 23:58:38] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[05/May/2026 23:58:38] "GET /static/admin/img/icon-yes-dark.svg HTTP/1.1" 304 0
+[05/May/2026 23:58:51] "GET /admin/ HTTP/1.1" 200 11693
+[05/May/2026 23:58:52] "GET / HTTP/1.1" 200 18693
+[05/May/2026 23:58:53] "GET /media/doctor_profiles/IMG_20251014_102515.jpg HTTP/1.1" 304 0
+[05/May/2026 23:58:53] "GET /static/css/styles.css HTTP/1.1" 304 0
+[05/May/2026 23:58:55] "POST /logout/ HTTP/1.1" 302 0
+[05/May/2026 23:58:55] "GET / HTTP/1.1" 200 18257
+[05/May/2026 23:59:01] "GET /login/ HTTP/1.1" 200 3716
+[05/May/2026 23:59:12] "POST /login/ HTTP/1.1" 302 0
+[05/May/2026 23:59:12] "GET /dashboard/ HTTP/1.1" 200 7217
+[05/May/2026 23:59:23] "GET /prescriptions/5/ HTTP/1.1" 200 5264
+[05/May/2026 23:59:23] "GET /static/css/styles.css HTTP/1.1" 304 0
+[06/May/2026 00:22:50] "GET /dashboard/ HTTP/1.1" 200 7217
+[06/May/2026 00:22:50] "GET /static/css/styles.css HTTP/1.1" 304 0
+[06/May/2026 00:22:50] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[06/May/2026 00:23:14] "POST /logout/ HTTP/1.1" 302 0
+[06/May/2026 00:23:14] "GET / HTTP/1.1" 200 18257
+[06/May/2026 00:23:14] "GET /media/doctor_profiles/IMG_20251014_102515.jpg HTTP/1.1" 304 0
+[06/May/2026 00:23:18] "GET /login/ HTTP/1.1" 200 3716
+C:\Users\HP\Desktop\DMS\clinic\models.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Python314\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python314\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\base.py", line 573, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+clinic.Prescription.patient_id: (models.E006) The field 'patient_id' clashes with the field 'patient' from model 'clinic.prescription'.
+
+System check identified 1 issue (0 silenced).
+C:\Users\HP\Desktop\DMS\clinic\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Python314\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python314\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\base.py", line 573, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+clinic.Prescription.patient_id: (models.E006) The field 'patient_id' clashes with the field 'patient' from model 'clinic.prescription'.
+
+System check identified 1 issue (0 silenced).
+C:\Users\HP\Desktop\DMS\clinic\views.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Python314\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python314\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\base.py", line 573, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+clinic.Prescription.patient_id: (models.E006) The field 'patient_id' clashes with the field 'patient' from model 'clinic.prescription'.
+
+System check identified 1 issue (0 silenced).
+C:\Users\HP\Desktop\DMS\clinic\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Python314\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python314\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\base.py", line 573, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+clinic.Prescription.patient_id: (models.E006) The field 'patient_id' clashes with the field 'patient' from model 'clinic.prescription'.
+
+System check identified 1 issue (0 silenced).
+C:\Users\HP\Desktop\DMS\clinic\utils.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Python314\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python314\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\base.py", line 573, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+clinic.Prescription.patient_id: (models.E006) The field 'patient_id' clashes with the field 'patient' from model 'clinic.prescription'.
+
+System check identified 1 issue (0 silenced).
+C:\Users\HP\Desktop\DMS\clinic\models.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Python314\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python314\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\base.py", line 573, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+clinic.Prescription.patient_id: (models.E006) The field 'patient_id' clashes with the field 'patient' from model 'clinic.prescription'.
+
+System check identified 1 issue (0 silenced).
+C:\Users\HP\Desktop\DMS\clinic\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Python314\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python314\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\management\base.py", line 496, in check
+    all_issues = checks.run_checks(
+        app_configs=app_configs,
+    ...<2 lines>...
+        databases=databases,
+    )
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\urls\resolvers.py", line 541, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\urls\resolvers.py", line 729, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\urls\resolvers.py", line 722, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Python314\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\HP\Desktop\DMS\dental_management_system\urls.py", line 8, in <module>
+    path('', include('clinic.urls')),
+             ~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Roaming\Python\Python314\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python314\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\HP\Desktop\DMS\clinic\urls.py", line 4, in <module>
+    from . import views
+  File "C:\Users\HP\Desktop\DMS\clinic\views.py", line 249
+    if query:
+IndentationError: unexpected indent
+C:\Users\HP\Desktop\DMS\clinic\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\DMS\clinic\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\DMS\clinic\migrations\0002_doctorprofile_bmdc_no_doctorprofile_chamber_info_and_more.py changed, reloading.
+Watching for file changes with StatReloader
+[06/May/2026 00:35:44] "GET / HTTP/1.1" 200 18257
+[06/May/2026 00:35:44] "GET /media/doctor_profiles/IMG_20251014_102515.jpg HTTP/1.1" 304 0
+[06/May/2026 00:35:44] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[06/May/2026 00:35:44] "GET /static/css/styles.css HTTP/1.1" 200 6170
+[06/May/2026 00:35:53] "GET /login/ HTTP/1.1" 200 3716
+[06/May/2026 00:35:57] "POST /login/ HTTP/1.1" 302 0
+[06/May/2026 00:35:58] "GET /dashboard/ HTTP/1.1" 200 6938
+[06/May/2026 00:36:08] "GET /prescriptions/ HTTP/1.1" 200 4185
+[06/May/2026 00:36:17] "GET /prescriptions/create/ HTTP/1.1" 200 15617
+[06/May/2026 00:37:35] "GET /dashboard/ HTTP/1.1" 200 6938
+[06/May/2026 00:37:35] "GET /static/css/styles.css HTTP/1.1" 304 0
+[06/May/2026 00:37:37] "GET /medicines/ HTTP/1.1" 200 3606
+[06/May/2026 00:37:40] "GET /medicines/add/ HTTP/1.1" 200 5760
+[06/May/2026 00:38:49] "POST /medicines/add/ HTTP/1.1" 302 0
+[06/May/2026 00:38:49] "GET /medicines/ HTTP/1.1" 200 4433
+[06/May/2026 00:38:49] "GET /static/css/styles.css HTTP/1.1" 304 0
+[06/May/2026 00:38:56] "GET /dashboard/ HTTP/1.1" 200 6938
+[06/May/2026 00:39:04] "GET /appointments/ HTTP/1.1" 200 5298
+[06/May/2026 00:39:17] "POST /appointments/1/status/ HTTP/1.1" 302 0
+[06/May/2026 00:39:18] "GET /appointments/ HTTP/1.1" 200 5647
+[06/May/2026 00:39:21] "GET /dashboard/ HTTP/1.1" 200 6942
+[06/May/2026 00:39:31] "GET /prescriptions/create/ HTTP/1.1" 200 15731
+[06/May/2026 00:40:36] "POST /prescriptions/create/ HTTP/1.1" 302 0
+[06/May/2026 00:40:36] "GET /prescriptions/7/ HTTP/1.1" 200 7320
+[06/May/2026 00:40:36] "GET /static/css/styles.css HTTP/1.1" 304 0
+[06/May/2026 00:41:38] "GET /prescriptions/7/pdf/ HTTP/1.1" 200 41009
+[06/May/2026 00:45:18] "GET /dashboard/ HTTP/1.1" 200 7221
+[06/May/2026 00:45:18] "GET /static/css/styles.css HTTP/1.1" 304 0
+[06/May/2026 00:45:18] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[06/May/2026 00:45:30] "GET /prescriptions/ HTTP/1.1" 200 4475
+[06/May/2026 00:45:38] "GET /prescriptions/?q=ridwan HTTP/1.1" 200 4545
+[06/May/2026 00:45:46] "GET /prescriptions/?q=kamal HTTP/1.1" 200 4262
+[06/May/2026 00:45:55] "GET /prescriptions/?q=ridwan HTTP/1.1" 200 4545
+[06/May/2026 00:45:57] "GET /prescriptions/7/ HTTP/1.1" 200 6964
+[06/May/2026 00:46:06] "POST /logout/ HTTP/1.1" 302 0
+[06/May/2026 00:46:06] "GET / HTTP/1.1" 200 18257
+[06/May/2026 00:46:06] "GET /media/doctor_profiles/IMG_20251014_102515.jpg HTTP/1.1" 304 0
+[06/May/2026 00:46:09] "GET /login/ HTTP/1.1" 200 3716
+[06/May/2026 00:46:12] "GET /register/ HTTP/1.1" 200 12252
+[06/May/2026 01:01:03] "POST /register/ HTTP/1.1" 302 0
+[06/May/2026 01:01:03] "GET /dashboard/ HTTP/1.1" 200 7303
+[06/May/2026 01:01:03] "GET /static/css/styles.css HTTP/1.1" 304 0
+[06/May/2026 01:01:03] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[06/May/2026 01:01:30] "GET / HTTP/1.1" 200 19676
+[06/May/2026 01:01:30] "GET /media/doctor_profiles/IMG_20251014_102515.jpg HTTP/1.1" 304 0
+[06/May/2026 01:01:30] "GET /media/doctor_profiles/IMG_20251014_102515_1wmTBmx.jpg HTTP/1.1" 200 452975
+C:\Users\HP\Desktop\DMS\clinic\models.py changed, reloading.
+Watching for file changes with StatReloader
+[06/May/2026 01:04:20] "GET / HTTP/1.1" 200 19309
+[06/May/2026 01:04:20] "GET /media/doctor_profiles/IMG_20251014_102515_1wmTBmx.jpg HTTP/1.1" 304 0
+C:\Users\HP\Desktop\DMS\clinic\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\DMS\clinic\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\DMS\clinic\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\DMS\clinic\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\DMS\clinic\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Desktop\DMS\clinic\utils.py changed, reloading.
+Watching for file changes with StatReloader
+[06/May/2026 01:15:45] "GET / HTTP/1.1" 200 16673
+[06/May/2026 01:15:46] "GET /static/js/prescription.js HTTP/1.1" 304 0
+[06/May/2026 01:15:46] "GET /static/css/styles.css HTTP/1.1" 200 6395
+[06/May/2026 01:16:42] "GET / HTTP/1.1" 200 16673
+[06/May/2026 01:16:42] "GET /static/css/styles.css HTTP/1.1" 304 0
+[06/May/2026 01:16:44] "GET /admin/ HTTP/1.1" 302 0
+[06/May/2026 01:16:44] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3607
+[06/May/2026 01:16:44] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[06/May/2026 01:16:44] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[06/May/2026 01:16:44] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[06/May/2026 01:16:44] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[06/May/2026 01:16:44] "GET /static/admin/css/login.css HTTP/1.1" 304 0
+[06/May/2026 01:16:44] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[06/May/2026 01:16:44] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[06/May/2026 01:17:02] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3776
+[06/May/2026 01:17:20] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[06/May/2026 01:17:20] "GET /admin/ HTTP/1.1" 200 11693
+[06/May/2026 01:17:20] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[06/May/2026 01:17:20] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[06/May/2026 01:17:20] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /admin/auth/user/ HTTP/1.1" 200 16235
+[06/May/2026 01:17:28] "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[06/May/2026 01:17:28] "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 645
+[06/May/2026 01:17:28] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+[06/May/2026 01:17:28] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+[06/May/2026 01:17:52] "GET /admin/clinic/specialistdoctor/ HTTP/1.1" 200 11733
+[06/May/2026 01:17:52] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[06/May/2026 01:17:59] "GET /admin/clinic/doctorprofile/ HTTP/1.1" 200 14252
+[06/May/2026 01:17:59] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[06/May/2026 01:18:15] "GET /admin/clinic/doctorprofile/5/change/ HTTP/1.1" 200 28193
+[06/May/2026 01:18:15] "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[06/May/2026 01:18:15] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[06/May/2026 01:18:15] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[06/May/2026 01:18:15] "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[06/May/2026 01:18:15] "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[06/May/2026 01:18:40] "GET /admin/clinic/specialistdoctor/ HTTP/1.1" 200 11733
+[06/May/2026 01:18:40] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
