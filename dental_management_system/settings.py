@@ -15,6 +15,16 @@ default_allowed_hosts = ["127.0.0.1", "localhost", "testserver", ".railway.app"]
 env_allowed_hosts = os.environ.get("ALLOWED_HOSTS", "")
 ALLOWED_HOSTS = [host.strip() for host in env_allowed_hosts.split(",") if host.strip()] or default_allowed_hosts
 
+default_csrf_trusted_origins = [
+    "https://*.railway.app",
+    "http://127.0.0.1",
+    "http://localhost",
+]
+env_csrf_trusted_origins = os.environ.get("CSRF_TRUSTED_ORIGINS", "")
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip() for origin in env_csrf_trusted_origins.split(",") if origin.strip()
+] or default_csrf_trusted_origins
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -109,6 +119,11 @@ STORAGES = {
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+USE_X_FORWARDED_HOST = True
+CSRF_COOKIE_SECURE = not DEBUG
+SESSION_COOKIE_SECURE = not DEBUG
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'
