@@ -342,6 +342,11 @@ textarea.form-control {
 }
 
 @media print {
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
     .navbar,
     .site-footer,
     .btn,
@@ -356,24 +361,102 @@ textarea.form-control {
 
     body {
         background: white;
+        font-size: 11pt;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     .container,
     .py-5 {
         padding: 0 !important;
         margin: 0 !important;
+        max-width: 100% !important;
     }
 
     .prescription-sheet {
         border-radius: 0 !important;
+        background: #fff !important;
     }
 
     .printable-prescription {
         box-shadow: none !important;
         border: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
     }
 
     .prescription-body-grid {
         min-height: 0;
+        grid-template-columns: 29% 71% !important;
+        break-inside: avoid;
+    }
+
+    .prescription-top {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .prescription-footer-preview {
+        grid-template-columns: 1.3fr 0.7fr !important;
+    }
+
+    .prescription-patient-row {
+        grid-template-columns: 1.4fr 1fr 0.7fr 0.8fr 1.2fr !important;
+        gap: 0.5rem !important;
+    }
+
+    .rx-table-head,
+    .rx-table-row {
+        grid-template-columns: 2.5fr 1fr 1fr 1.4fr !important;
+        gap: 0.5rem !important;
+    }
+
+    .left-notes-panel {
+        border-right: 1px solid #334155 !important;
+        border-bottom: 0 !important;
+        padding-right: 0.8rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    .rx-panel {
+        padding-left: 0.8rem !important;
+    }
+
+    .doctor-block h4 {
+        font-size: 20pt !important;
+    }
+
+    .doctor-block p,
+    .notes-block p,
+    .advice-box p,
+    .prescription-footer-preview p,
+    .rx-table-row,
+    .rx-table-head {
+        font-size: 10pt !important;
+        line-height: 1.35 !important;
+    }
+
+    .notes-block h5,
+    .advice-box h5,
+    .rx-mark {
+        font-size: 18pt !important;
+    }
+
+    .prescription-clinic-title h2 {
+        font-size: 18pt !important;
+    }
+
+    .signature-preview {
+        max-width: 120px !important;
+        max-height: 50px !important;
+    }
+
+    .rx-row-card,
+    .notes-block,
+    .advice-box,
+    .prescription-footer-preview,
+    .prescription-top,
+    .prescription-patient-row {
+        break-inside: avoid;
     }
 }
