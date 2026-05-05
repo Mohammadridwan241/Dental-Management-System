@@ -1,0 +1,379 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.clinic-navbar {
+    background: linear-gradient(135deg, #0f766e, #115e59);
+}
+
+.logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.hero-section {
+    background:
+        radial-gradient(circle at top right, rgba(45, 212, 191, 0.28), transparent 28%),
+        linear-gradient(180deg, #ecfeff, #f8fafc 65%);
+}
+
+.hero-card,
+.about-panel,
+.metric-card,
+.contact-box {
+    border-radius: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+}
+
+.info-tile {
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    height: 100%;
+}
+
+.info-tile.accent,
+.metric-card {
+    background: linear-gradient(135deg, #0f766e, #14b8a6);
+    color: white;
+}
+
+.metric-card span {
+    display: block;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.metric-card h2 {
+    margin: 0.4rem 0 0;
+    font-size: 2.2rem;
+}
+
+.btn-clinic {
+    background: #0f766e;
+    border-color: #0f766e;
+    color: #fff;
+}
+
+.btn-clinic:hover {
+    background: #115e59;
+    border-color: #115e59;
+    color: #fff;
+}
+
+.text-clinic,
+.eyebrow {
+    color: #0f766e;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.section-heading {
+    max-width: 42rem;
+    margin-bottom: 1rem;
+}
+
+.service-card,
+.specialist-card {
+    border-radius: 1.4rem;
+}
+
+.specialist-image {
+    height: 240px;
+    object-fit: cover;
+}
+
+.specialist-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 240px;
+    background: linear-gradient(135deg, #99f6e4, #ccfbf1);
+    color: #115e59;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.auth-section,
+.dashboard-shell {
+    min-height: calc(100vh - 140px);
+}
+
+.site-footer {
+    background: #0f172a;
+    color: #cbd5e1;
+}
+
+.prescription-header {
+    color: #0f172a;
+}
+
+.print-only {
+    display: none;
+}
+
+.prescription-editor {
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+
+.prescription-sheet {
+    background: #fff;
+    border-radius: 1rem;
+}
+
+.prescription-clinic-title {
+    text-align: center;
+    padding-bottom: 0.9rem;
+}
+
+.prescription-clinic-title h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #1f2937;
+}
+
+.prescription-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #1f2937;
+    margin-bottom: 1rem;
+}
+
+.doctor-block h4 {
+    margin: 0 0 0.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #3347a8;
+}
+
+.doctor-block p {
+    margin: 0 0 0.35rem;
+    font-size: 0.98rem;
+    line-height: 1.35;
+}
+
+.patient-inline-grid {
+    display: grid;
+    grid-template-columns: 2fr 0.7fr 0.9fr 1.4fr;
+    gap: 0.85rem;
+    align-items: end;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid #334155;
+}
+
+.field-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.prescription-patient-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 0.7fr 0.8fr 1.2fr;
+    gap: 1rem;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid #334155;
+}
+
+.prescription-patient-row span {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #475569;
+}
+
+.prescription-patient-row strong {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 1rem;
+}
+
+.prescription-body-grid {
+    display: grid;
+    grid-template-columns: 29% 71%;
+    min-height: 720px;
+}
+
+.left-notes-panel {
+    border-right: 1px solid #334155;
+    padding: 1.25rem 1rem 1rem 0;
+}
+
+.notes-block h5,
+.advice-box h5 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+}
+
+.notes-block p,
+.advice-box p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.rx-panel {
+    padding: 1rem 0 0 1.25rem;
+}
+
+.rx-mark {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    color: #111827;
+}
+
+.rx-row-card {
+    border-bottom: 1px dashed #cbd5e1;
+    padding: 0.9rem 0;
+}
+
+.rx-table {
+    width: 100%;
+}
+
+.rx-table-head,
+.rx-table-row {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1.4fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.rx-table-head {
+    font-weight: 700;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #cbd5e1;
+    margin-bottom: 0.35rem;
+}
+
+.rx-table-row {
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed #e2e8f0;
+    line-height: 1.45;
+}
+
+.advice-box {
+    padding-top: 1rem;
+}
+
+.signature-preview {
+    max-width: 150px;
+    max-height: 70px;
+    object-fit: contain;
+}
+
+.prescription-footer-preview {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #334155;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2rem;
+    align-items: end;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+.form-control,
+.form-select {
+    border-radius: 0.9rem;
+    padding: 0.85rem 1rem;
+}
+
+textarea.form-control {
+    min-height: 120px;
+}
+
+@media (max-width: 991px) {
+    .prescription-top,
+    .prescription-body-grid,
+    .prescription-footer-preview,
+    .patient-inline-grid,
+    .prescription-patient-row,
+    .rx-table-head,
+    .rx-table-row {
+        grid-template-columns: 1fr;
+    }
+
+    .left-notes-panel {
+        border-right: 0;
+        border-bottom: 1px solid #334155;
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .rx-panel {
+        padding-left: 0;
+    }
+}
+
+@media print {
+    .navbar,
+    .site-footer,
+    .btn,
+    .alert,
+    .screen-only {
+        display: none !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .container,
+    .py-5 {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .prescription-sheet {
+        border-radius: 0 !important;
+    }
+
+    .printable-prescription {
+        box-shadow: none !important;
+        border: 0 !important;
+    }
+
+    .prescription-body-grid {
+        min-height: 0;
+    }
+}

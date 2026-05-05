@@ -5,9 +5,15 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-=^6^x@h4r21zx(&^08+b)5lvhh-0v4y35@eocpnd8e-q=$8ck@'
-DEBUG = False
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "testserver", ".railway.app"]
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "django-insecure-=^6^x@h4r21zx(&^08+b)5lvhh-0v4y35@eocpnd8e-q=$8ck@",
+)
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+
+default_allowed_hosts = ["127.0.0.1", "localhost", "testserver", ".railway.app"]
+env_allowed_hosts = os.environ.get("ALLOWED_HOSTS", "")
+ALLOWED_HOSTS = [host.strip() for host in env_allowed_hosts.split(",") if host.strip()] or default_allowed_hosts
 
 
 INSTALLED_APPS = [
@@ -56,7 +62,7 @@ DATABASES = {
     'default': dj_database_url.parse(
         os.environ.get('DATABASE_URL', f"sqlite:///{BASE_DIR / 'db.sqlite3'}"),
         conn_max_age=600,
-        ssl_require=False,
+        ssl_require=not DEBUG,
     )
 }
 
@@ -86,7 +92,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
