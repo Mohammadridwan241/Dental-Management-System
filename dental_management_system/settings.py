@@ -11,12 +11,13 @@ SECRET_KEY = os.environ.get(
 )
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-default_allowed_hosts = ["127.0.0.1", "localhost", "testserver", ".railway.app"]
+default_allowed_hosts = ["127.0.0.1", "localhost", "testserver", ".railway.app", ".onrender.com"]
 env_allowed_hosts = os.environ.get("ALLOWED_HOSTS", "")
 ALLOWED_HOSTS = [host.strip() for host in env_allowed_hosts.split(",") if host.strip()] or default_allowed_hosts
 
 default_csrf_trusted_origins = [
     "https://*.railway.app",
+    "https://*.onrender.com",
     "http://127.0.0.1",
     "http://localhost",
 ]
