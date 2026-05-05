@@ -4,11 +4,11 @@ from pathlib import Path
 
 from django.http import HttpResponse
 from reportlab.lib import colors
+from reportlab.lib.fonts import addMapping
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.pdfmetrics import registerFontFamily
 from reportlab.pdfbase.ttfonts import TTFont, TTFError
 from reportlab.platypus import Image, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
@@ -33,17 +33,15 @@ def _register_prescription_fonts():
                 logger.warning("Could not register font %s from %s: %s", font_name, font_path, exc)
     if "Nirmala" in registered:
         try:
-            registerFontFamily(
-                "NirmalaFamily",
-                normal=registered["Nirmala"],
-                bold=registered.get("NirmalaBold", registered["Nirmala"]),
-            )
+            addMapping("Nirmala", 0, 0, registered["Nirmala"])
+            addMapping("Nirmala", 1, 0, registered.get("NirmalaBold", registered["Nirmala"]))
+            addMapping("Nirmala", 0, 1, registered["Nirmala"])
+            addMapping("Nirmala", 1, 1, registered.get("NirmalaBold", registered["Nirmala"]))
         except (ValueError, KeyError) as exc:
-            logger.warning("Could not register NirmalaFamily: %s", exc)
+            logger.warning("Could not add font mapping for Nirmala: %s", exc)
     return {
         "regular": registered.get("Nirmala", "Helvetica"),
         "bold": registered.get("NirmalaBold", registered.get("Nirmala", "Helvetica-Bold")),
-        "family": "NirmalaFamily" if "Nirmala" in registered else None,
     }
 
 
@@ -82,7 +80,6 @@ def render_prescription_pdf(prescription):
     fonts = _register_prescription_fonts()
     regular_font = fonts["regular"]
     bold_font = fonts["bold"]
-    font_family = fonts["family"]
 
     buffer = BytesIO()
     doc = SimpleDocTemplate(
@@ -140,7 +137,7 @@ def render_prescription_pdf(prescription):
         ParagraphStyle(
             "DoctorLeft",
             parent=small_style,
-            fontName=font_family or regular_font,
+            fontName=regular_font,
             fontSize=10,
             leading=13,
         ),
@@ -152,7 +149,7 @@ def render_prescription_pdf(prescription):
         ParagraphStyle(
             "DoctorRight",
             parent=small_style,
-            fontName=font_family or regular_font,
+            fontName=regular_font,
             fontSize=10,
             leading=12,
             alignment=1,
