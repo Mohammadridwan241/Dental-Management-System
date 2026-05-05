@@ -1,4 +1,5 @@
 from io import BytesIO
+import logging
 from pathlib import Path
 
 from django.http import HttpResponse
@@ -8,8 +9,10 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.pdfmetrics import registerFontFamily
-from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.ttfonts import TTFont, TTFError
 from reportlab.platypus import Image, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+
+logger = logging.getLogger(__name__)
 
 
 def _register_prescription_fonts():
@@ -23,19 +26,36 @@ def _register_prescription_fonts():
     registered = {}
     for font_name, font_path in font_candidates:
         if font_path.exists() and font_name not in registered:
-            pdfmetrics.registerFont(TTFont(font_name, str(font_path)))
-            registered[font_name] = font_name
+            try:
+                pdfmetrics.registerFont(TTFont(font_name, str(font_path)))
+                registered[font_name] = font_name
+            except (TTFError, OSError, ValueError) as exc:
+                logger.warning("Could not register font %s from %s: %s", font_name, font_path, exc)
     if "Nirmala" in registered:
-        registerFontFamily(
-            "NirmalaFamily",
-            normal=registered["Nirmala"],
-            bold=registered.get("NirmalaBold", registered["Nirmala"]),
-        )
+        try:
+            registerFontFamily(
+                "NirmalaFamily",
+                normal=registered["Nirmala"],
+                bold=registered.get("NirmalaBold", registered["Nirmala"]),
+            )
+        except (ValueError, KeyError) as exc:
+            logger.warning("Could not register NirmalaFamily: %s", exc)
     return {
         "regular": registered.get("Nirmala", "Helvetica"),
         "bold": registered.get("NirmalaBold", registered.get("Nirmala", "Helvetica-Bold")),
         "family": "NirmalaFamily" if "Nirmala" in registered else None,
     }
+
+
+def _get_signature_image(doctor):
+    try:
+        if doctor.signature_image and doctor.signature_image.name:
+            signature_path = Path(doctor.signature_image.path)
+            if signature_path.exists():
+                return Image(str(signature_path), width=28 * mm, height=14 * mm)
+    except Exception as exc:
+        logger.warning("Could not load signature image for doctor %s: %s", doctor, exc)
+    return None
 
 
 def _doctor_block_text(doctor, bangla=False):
@@ -252,8 +272,9 @@ def render_prescription_pdf(prescription):
     story.append(Spacer(1, 16))
 
     signature_parts = []
-    if doctor.signature_image and Path(doctor.signature_image.path).exists():
-        signature_parts.append(Image(doctor.signature_image.path, width=28 * mm, height=14 * mm))
+    signature_image = _get_signature_image(doctor)
+    if signature_image:
+        signature_parts.append(signature_image)
     signature_parts.append(Paragraph("<b>Signature</b>", small_bold))
     signature_parts.append(Paragraph(doctor.display_name, small_style))
     if doctor.hospital_name:
