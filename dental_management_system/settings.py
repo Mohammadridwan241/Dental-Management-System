@@ -62,9 +62,15 @@ DATABASES = {
     'default': dj_database_url.parse(
         os.environ.get('DATABASE_URL', f"sqlite:///{BASE_DIR / 'db.sqlite3'}"),
         conn_max_age=600,
-        ssl_require=not DEBUG,
+        ssl_require=False,
     )
 }
+
+if os.environ.get("DATABASE_URL"):
+    DATABASES["default"]["CONN_MAX_AGE"] = 600
+    if DATABASES["default"]["ENGINE"] != "django.db.backends.sqlite3":
+        DATABASES["default"].setdefault("OPTIONS", {})
+        DATABASES["default"]["OPTIONS"]["sslmode"] = "require"
 
 
 AUTH_PASSWORD_VALIDATORS = [
